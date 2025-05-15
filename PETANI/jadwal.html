@@ -1,151 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Schedule - Orange Management</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Schedule - Orange Management</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+  </style>
 </head>
 <body class="bg-gray-100">
+  <header class="bg-orange-600 p-4 text-white">
+    <h1 class="text-2xl font-bold">Jadwal</h1>
+  </header>
 
-    <header class="bg-orange-600 p-4 text-white">
-        <h1 class="text-2xl font-bold">Jadwal</h1>
-    </header>
+  <main class="container mx-auto my-8">
+    <section>
+      <h2 class="text-xl font-semibold mb-4">Acara dan aktivitas yang akan datang</h2>
+      <div id="eventContainer" class="bg-white shadow rounded p-6 mb-8">
+        <!-- Event example -->
+        <div class="mb-4 border-b pb-4 relative group">
+          <button class="absolute top-0 right-0 text-red-500 hover:text-red-700 hidden group-hover:block" onclick="showDeletePopup(this)">
+            <i class="fas fa-trash"></i>
+          </button>
+          <h3 class="font-bold">Vastival Pertanian</h3>
+          <p class="text-gray-700">Ada Vastival pertanian di balai desa</p>
+          <p class="text-gray-500">Tanggal: October 30, 2025</p>
+          <p class="text-gray-500">Waktu: 10:00 - 14:00</p>
+        </div>
 
-    <main class="container mx-auto my-8">
-        <section>
-            <h2 class="text-xl font-semibold mb-4">Acara dan aktivitas yang akan atang</h2>
-            <div id="eventContainer" class="bg-white shadow rounded p-6 mb-8">
+        <!-- ... Tambahkan event lainnya di sini dengan struktur yang sama -->
+      </div>
+    </section>
 
-                                <!-- Event 1 -->
-                                <div class="mb-4 border-b pb-4 relative group">
-                                    <button class="absolute top-0 right-0 text-red-500 hover:text-red-700 hidden group-hover:block" onclick="this.parentElement.remove()">
-                                        <i class="fas fa-trash-alt"></i> Delete
-                                    </button>
-                                    <h3 class="font-bold">Vastival Pertanian</h3>
-                                    <p class="text-gray-700">Ada Vastival pertanian di balai desa</p>
-                                    <p class="text-gray-500">Tanggal: October 30, 2025</p>
-                                    <p class="text-gray-500">Waktu: 10:00 - 14:00</p>
-                                </div>
-                
-                                <!-- Event 2 -->
-                                <div class="mb-4 border-b pb-4 relative group">
-                                    <button class="absolute top-0 right-0 text-red-500 hover:text-red-700 hidden group-hover:block" onclick="this.parentElement.remove()">
-                                        <i class="fas fa-trash-alt"></i> Delete
-                                    </button>
-                                    <h3 class="font-bold">Pergi ke toko</h3>
-                                    <p class="text-gray-700">Ke toko pertanian terdekat dan membeli beberapa alat dan bibit jeruk</p>
-                                    <p class="text-gray-500">Tanggal: November 5, 2025</p>
-                                    <p class="text-gray-500">Waktu: 8:00 - 14:00</p>
-                                </div>
-                
-                                <!-- Event 3 -->
-                                <div class="mb-4 border-b pb-4 relative group">
-                                    <button class="absolute top-0 right-0 text-red-500 hover:text-red-700 hidden group-hover:block" onclick="this.parentElement.remove()">
-                                        <i class="fas fa-trash-alt"></i> Delete
-                                    </button>
-                                    <h3 class="font-bold">Memupuk</h3>
-                                    <p class="text-gray-700">Memupuk lahan</p>
-                                    <p class="text-gray-500">Tanggal: November 12, 2025</p>
-                                    <p class="text-gray-500">Waktu: 9:00 - 12:00</p>
-                                </div>
-                
-                                <!-- Event 4 -->
-                                <div class="mb-4 border-b pb-4 relative group">
-                                    <button class="absolute top-0 right-0 text-red-500 hover:text-red-700 hidden group-hover:block" onclick="this.parentElement.remove()">
-                                        <i class="fas fa-trash-alt"></i> Delete
-                                    </button>
-                                    <h3 class="font-bold">Cari resep</h3>
-                                    <p class="text-gray-700">Mencari resep jus jeruk yang enak</p>
-                                    <p class="text-gray-500">Tanggal: November 20, 2025</p>
-                                    <p class="text-gray-500">Waktu: 13:00 - 15:00</p>
-                                </div>
-                
-                                <!-- Event 5 -->
-                                <div class="mb-4 border-b pb-4 relative group">
-                                    <button class="absolute top-0 right-0 text-red-500 hover:text-red-700 hidden group-hover:block" onclick="this.parentElement.remove()">
-                                        <i class="fas fa-trash-alt"></i> Delete
-                                    </button>
-                                    <h3 class="font-bold">Kerja bakti</h3>
-                                    <p class="text-gray-700">Ada kerja bakti di balai desa njir</p>
-                                    <p class="text-gray-500">Tanggal: November 25, 2025</p>
-                                    <p class="text-gray-500">Waktu: 8:00 - 11:00</p>
-                                </div>
+    <section>
+      <h2 class="text-xl font-semibold mb-4">Tambah jadwal</h2>
+      <form id="eventForm" class="bg-white p-6 rounded shadow">
+        <div class="mb-4">
+          <label for="eventName" class="block text-gray-700">Nama acara</label>
+          <input type="text" id="eventName" class="mt-1 block w-full border border-gray-300 rounded p-2" required>
+        </div>
+        <div class="mb-4">
+          <label for="eventDescription" class="block text-gray-700">Deskripsi</label>
+          <textarea id="eventDescription" class="mt-1 block w-full border border-gray-300 rounded p-2" required></textarea>
+        </div>
+        <div class="mb-4">
+          <label for="eventDate" class="block text-gray-700">Tanggal</label>
+          <input type="date" id="eventDate" class="mt-1 block w-full border border-gray-300 rounded p-2" required>
+        </div>
+        <div class="mb-4">
+          <label for="eventTime" class="block text-gray-700">Waktu</label>
+          <input type="time" id="eventTime" class="mt-1 block w-full border border-gray-300 rounded p-2" required>
+        </div>
+        <div class="flex justify-between mt-6">
+          <button type="submit" class="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-6 rounded">Tambah acara</button>
+          <a href="index.html" class="bg-gray-300 hover:bg-gray-400 text-gray-700 font-semibold py-2 px-6 rounded text-sm">BATAL</a>
+        </div>
+      </form>
+    </section>
+  </main>
 
-            </div>
-        </section>
+  <footer class="bg-orange-600 p-4 text-white text-center">
+    <p>&copy; 2023 Orange Management. All rights reserved.</p>
+  </footer>
 
-        <section>
-            <h2 class="text-xl font-semibold mb-4">Tambah jadwal</h2>
-            <form id="eventForm" class="bg-white p-6 rounded shadow">
-                <div class="mb-4">
-                    <label for="eventName" class="block text-gray-700">Nama acara</label>
-                    <input type="text" id="eventName" class="mt-1 block w-full border border-gray-300 rounded p-2" required>
-                </div>
-                <div class="mb-4">
-                    <label for="eventDescription" class="block text-gray-700">Deskripsi</label>
-                    <textarea id="eventDescription" class="mt-1 block w-full border border-gray-300 rounded p-2" required></textarea>
-                </div>
-                <div class="mb-4">
-                    <label for="eventDate" class="block text-gray-700">Tanggal</label>
-                    <input type="date" id="eventDate" class="mt-1 block w-full border border-gray-300 rounded p-2" required>
-                </div>
-                <div class="mb-4">
-                    <label for="eventTime" class="block text-gray-700">Waktu</label>
-                    <input type="time" id="eventTime" class="mt-1 block w-full border border-gray-300 rounded p-2" required>
-                </div>
-                <div class="flex justify-between mt-6">
-                    <button type="submit" class="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-6 rounded">
-                      Tambah acara
-                    </button>
-                    <a href="index.html" class="bg-gray-300 hover:bg-gray-400 text-gray-700 font-semibold py-2 px-6 rounded text-sm">
-                      BATAL
-                    </a>
-                  </div>
-            </form>
-        </section>
-    </main>
+  <!-- Modal Konfirmasi Hapus -->
+  <div id="deleteModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+    <div class="bg-white rounded-lg shadow-lg p-6 max-w-sm w-full">
+      <h2 class="text-lg font-semibold mb-4">Konfirmasi Hapus</h2>
+      <p class="mb-6">Apakah kamu yakin ingin menghapus jadwal ini?</p>
+      <div class="flex justify-end space-x-4">
+        <button id="cancelDelete" class="bg-grey-300 hover:bg-yellow-500 text-white px-4 py-2 rounded">Batal</button>
+        <button id="confirmDelete" class="bg-orange-500 hover:bg-red-700 text-white px-4 py-2 rounded">Hapus</button>
+      </div>
+    </div>
+  </div>
 
-    <footer class="bg-orange-600 p-4 text-white text-center">
-        <p>&copy; 2023 Orange Management. All rights reserved.</p>
-    </footer>
+  <script>
+    let targetToDelete = null;
 
-    <script>
-        function createEventHTML(name, description, date, time) {
-            return `
-                <div class="mb-4 border-b pb-4 relative group">
-                    <button class="absolute top-0 right-0 text-red-500 hover:text-red-700 hidden group-hover:block" onclick="this.parentElement.remove()">
-                        <i class="fas fa-trash-alt"></i> Delete
-                    </button>
-                    <h3 class="font-bold">${name}</h3>
-                    <p class="text-gray-600">${description}</p>
-                    <p class="text-gray-500">Date: ${date}</p>
-                    <p class="text-gray-500">Time: ${time}</p>
-                </div>
-            `;
-        }
+    function showDeletePopup(button) {
+      targetToDelete = button.closest(".group");
+      document.getElementById("deleteModal").classList.remove("hidden");
+      document.getElementById("deleteModal").classList.add("flex");
+    }
 
-        document.getElementById('eventForm').addEventListener('submit', function(e) {
-            e.preventDefault();
+    document.getElementById("cancelDelete").addEventListener("click", function () {
+      document.getElementById("deleteModal").classList.add("hidden");
+      document.getElementById("deleteModal").classList.remove("flex");
+      targetToDelete = null;
+    });
 
-            const name = document.getElementById('eventName').value;
-            const description = document.getElementById('eventDescription').value;
-            const date = document.getElementById('eventDate').value;
-            const time = document.getElementById('eventTime').value;
+    document.getElementById("confirmDelete").addEventListener("click", function () {
+      if (targetToDelete) {
+        targetToDelete.remove();
+        targetToDelete = null;
+      }
+      document.getElementById("deleteModal").classList.add("hidden");
+      document.getElementById("deleteModal").classList.remove("flex");
+    });
 
-            const eventHTML = createEventHTML(name, description, date, time);
-            document.getElementById('eventContainer').insertAdjacentHTML('beforeend', eventHTML);
+    function createEventHTML(name, description, date, time) {
+      return `
+        <div class="mb-4 border-b pb-4 relative group">
+          <button class="absolute top-0 right-0 text-red-500 hover:text-red-700 hidden group-hover:block" onclick="showDeletePopup(this)">
+            <i class="fas fa-trash"></i>
+          </button>
+          <h3 class="font-bold">${name}</h3>
+          <p class="text-gray-700">${description}</p>
+          <p class="text-gray-500">Tanggal: ${date}</p>
+          <p class="text-gray-500">Waktu: ${time}</p>
+        </div>
+      `;
+    }
 
-            this.reset();
-        });
-    </script>
+    document.getElementById('eventForm').addEventListener('submit', function(e) {
+      e.preventDefault();
 
+      const name = document.getElementById('eventName').value;
+      const description = document.getElementById('eventDescription').value;
+      const date = document.getElementById('eventDate').value;
+      const time = document.getElementById('eventTime').value;
+
+      const eventHTML = createEventHTML(name, description, date, time);
+      document.getElementById('eventContainer').insertAdjacentHTML('beforeend', eventHTML);
+
+      this.reset();
+    });
+  </script>
 </body>
 </html>
