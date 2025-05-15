@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Daftar - Citrus Company</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: linear-gradient(to bottom right, #fff8f0, #ffe9cf);
+      border-radius: 12px;
+      padding: 40px;
+      width: 320px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+
+    .logo .orange {
+      color: #f57c00;
+    }
+
+    .logo .fruit {
+      font-weight: 900;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
+
+    .password-field {
+      position: relative;
+    }
+
+    .toggle-password {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    button {
+      background-color: #f57c00;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 15px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .login-link {
+      margin-top: 15px;
+      display: block;
+      font-size: 14px;
+    }
+
+    .login-link a {
+      text-decoration: none;
+      color: #f57c00;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">
+      <span class="orange">Citrus</span> <span class="fruit">C<span style="color: orange;">●</span>mpany</span>
+    </div>
+
+    <form>
+      <input type="email" placeholder="Masukan Email" required />
+      
+      <div class="password-field">
+        <input type="password" id="password" placeholder="Masukan kata sandi" required />
+        <button type="button" class="toggle-password" onclick="togglePassword()">👁️</button>
+      </div>
+
+      <button type="submit">Daftar</button>
+    </form>
+
+    <div class="login-link">
+      Sudah punya akun? <a href="login.html">Masuk</a>
+    </div>
+  </div>
+
+  <script>
+    function togglePassword() {
+      const passField = document.getElementById('password');
+      passField.type = passField.type === 'password' ? 'text' : 'password';
+    }
+  </script>
+</body>
+</html>

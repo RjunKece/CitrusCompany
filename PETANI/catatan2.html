@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Preview Diary Note - Orange Fruit Management</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Roboto', sans-serif; }
+  </style>
+</head>
+<body class="bg-orange-100">
+  <div class="container mx-auto p-6">
+    <h1 class="text-3xl font-bold text-center text-orange-800 mb-8">Preview Diary Note</h1>
+    
+    <div id="preview" class="bg-white shadow-md rounded-lg p-6">
+      <h2 class="text-2xl font-semibold text-orange-600 mb-2">Loading...</h2>
+      <p class="text-gray-700 mb-4">Please wait...</p>
+      <span class="text-gray-500 text-sm">Date:</span>
+    </div>
+
+    <div class="mt-8">
+      <a href="catatan1.html" class="bg-orange-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-orange-600 transition duration-200">Kembali ke catatan</a>
+    </div>
+  </div>
+
+  <script>
+    const preview = document.getElementById('preview');
+    const entriesData = JSON.parse(localStorage.getItem('entriesData')) || [];
+    const selectedIndex = localStorage.getItem('selectedEntry');
+
+    if (selectedIndex !== null && entriesData[selectedIndex]) {
+      const entry = entriesData[selectedIndex];
+      preview.innerHTML = `
+        <h2 class="text-2xl font-semibold text-orange-600 mb-2">${entry.title}</h2>
+        <p class="text-gray-700 mb-4">${entry.content}</p>
+        <span class="text-gray-500 text-sm">Date: ${entry.date}</span>
+      `;
+    } else {
+      preview.innerHTML = '<p class="text-red-500">No diary entry found.</p>';
+    }
+  </script>
+</body>
+</html>
