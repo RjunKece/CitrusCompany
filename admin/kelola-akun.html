@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kelola Akun Pengguna - Citrus Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              citrus: "#F28B0D",
+            },
+          },
+        },
+      };
+    </script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.8/iconify-icon.min.js"></script>
+  </head>
+  <body class="bg-gray-100 font-sans">
+    <div class="flex h-screen">
+      <!-- Sidebar -->
+      <aside class="w-64 bg-citrus text-white p-6 flex flex-col">
+        <h1 class="text-2xl font-bold mb-10">Citrus Admin</h1>
+        <nav class="flex-1 flex flex-col justify-between">
+          <div class="space-y-4">
+            <a
+              href="dashboard.html"
+              class="flex items-center py-2 px-4 rounded hover:bg-orange-500"
+            >
+              <iconify-icon
+                icon="material-symbols:dashboard-rounded"
+                class="w-5 h-5 mr-2"
+              ></iconify-icon>
+              Beranda
+            </a>
+            <a
+              href="kelola-akun.html"
+              class="flex items-center py-2 px-4 rounded hover:bg-orange-500"
+            >
+              <iconify-icon
+                icon="material-symbols:manage-accounts-rounded"
+                class="w-5 h-5 mr-2"
+              ></iconify-icon>
+              Kelola Akun
+            </a>
+            <a
+              href="marketplace.html"
+              class="flex items-center py-2 px-4 rounded hover:bg-orange-500"
+            >
+              <iconify-icon
+                icon="gridicons:product"
+                class="w-5 h-5 mr-2"
+              ></iconify-icon>
+              Produk Pasar
+            </a>
+            <a
+              href="verif.html"
+              class="flex items-center py-2 px-4 rounded hover:bg-orange-500"
+            >
+              <iconify-icon
+                icon="material-symbols:domain-verification-outline"
+                class="w-5 h-5 mr-2"
+              ></iconify-icon>
+              Verifikasi Produk
+            </a>
+            <a
+              href="datake.html"
+              class="flex items-center py-2 px-4 rounded hover:bg-orange-500"
+            >
+              <iconify-icon
+                icon="qlementine-icons:money-16"
+                class="w-5 h-5 mr-2"
+              ></iconify-icon>
+              Data Keuangan
+            </a>
+          </div>
+          <div class="pt-6">
+            <a
+              href="#"
+              class="flex items-center py-2 px-4 rounded hover:bg-orange-700"
+            >
+              <iconify-icon
+                icon="tabler:logout"
+                class="w-5 h-5 mr-2"
+              ></iconify-icon>
+              Keluar
+            </a>
+          </div>
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="flex-1 p-8 overflow-auto">
+        <header class="flex justify-between items-center mb-6">
+          <h2 class="text-3xl font-semibold">Kelola Akun Pengguna</h2>
+          <div class="flex items-center space-x-4">
+            <span class="text-gray-700">Admin</span>
+          </div>
+        </header>
+
+        <!-- Tabel Akun Pengguna -->
+        <div class="bg-white rounded shadow p-4 overflow-x-auto">
+          <table class="min-w-full text-sm">
+            <thead class="bg-gray-200">
+              <tr>
+                <th class="px-4 py-2 text-left">Nama</th>
+                <th class="px-4 py-2 text-left">Email</th>
+                <th class="px-4 py-2 text-left">Peran</th>
+                <th class="px-4 py-2 text-left">Aksi</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-t">
+                <td class="px-4 py-2">Arjuna</td>
+                <td class="px-4 py-2">arjuna@mail.com</td>
+                <td class="px-4 py-2">Petani</td>
+                <td class="px-4 py-2 space-x-2">
+                  <button class="bg-blue-500 text-white px-3 py-1 rounded">
+                    <a href="edit-hapus-a.html">Ubah</a>
+                  </button>
+                  <button class="bg-red-500 text-white px-3 py-1 rounded">
+                    <a href="edit-hapus-a.html">Hapus</a>
+                  </button>
+                </td>
+              </tr>
+              <tr class="border-t">
+                <td class="px-4 py-2">Sheva</td>
+                <td class="px-4 py-2">shevaluk@mail.com</td>
+                <td class="px-4 py-2">Pengunjung</td>
+                <td class="px-4 py-2 space-x-2">
+                  <button class="bg-blue-500 text-white px-2 py-1 rounded">
+                    <a href="edit-hapus-a.html"> Ubah </a>
+                  </button>
+                  <button class="bg-red-500 text-white px-2 py-1 rounded">
+                    <a href="edit-hapus-a.html"> Hapus </a>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
