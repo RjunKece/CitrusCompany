@@ -41,10 +41,15 @@
     <p class="mt-2 text-orange-600">Pengembangan Buah Jeruk Terdepan</p>
   </header>
 
-  <!-- GAMBAR CUACA -->
+  <!-- JAM & TANGGAL REALTIME -->
   <div class="flex justify-center mb-10">
-    <img src="widget.jpg" alt="Gambar Cuaca" class="w-full max-w-3xl rounded shadow-md" />
+  <div id="datetime" 
+       class="flex items-center justify-center text-center text-2xl md:text-3xl text-white font-bold bg-cover bg-center shadow-lg rounded-2xl w-full max-w-3xl h-40 md:h-48"
+       style="background-image: url('bc widget.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center;">
+    Memuat waktu...
   </div>
+</div>
+
 
   <!-- FITUR -->
   <main class="max-w-6xl mx-auto px-4 mb-10">
@@ -75,6 +80,25 @@
   <footer class="text-center py-5 bg-orange-600 text-white">
     <p>&copy; 2025 Citrus Company. Semua Hak Dilindungi.</p>
   </footer>
+
+  <!-- SCRIPT: JAM & TANGGAL -->
+  <script>
+    function updateDateTime() {
+      const now = new Date();
+      const formatted = now.toLocaleString('id-ID', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+      });
+      document.getElementById("datetime").innerHTML = formatted;
+    }
+    setInterval(updateDateTime, 1000);
+    updateDateTime();
+  </script>
 
 </body>
 </html>
